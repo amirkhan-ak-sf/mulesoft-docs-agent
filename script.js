@@ -74,7 +74,6 @@ async function sendMessage() {
     // Enable the input field and the send button
     document.getElementById('user-input').disabled = false;
     document.getElementById('send-btn').disabled = false;
-    document.getElementById('user-input').value = 'Type your question here...';
     document.getElementById('user-input').focus();
   }
 }
