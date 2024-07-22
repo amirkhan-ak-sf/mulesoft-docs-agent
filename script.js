@@ -74,6 +74,7 @@ async function sendMessage() {
     // Enable the input field and the send button
     document.getElementById('user-input').disabled = false;
     document.getElementById('send-btn').disabled = false;
+    document.getElementById('user-input').value = 'Type your question here...';
     document.getElementById('user-input').focus();
   }
 }
@@ -114,8 +115,7 @@ function formatReply(reply) {
 
 // Function to add the introductory message from the bot
 function addIntroMessage() {
-  const introMessage = `
-    Hi, I'm Max, an AI Agent built with MuleChain on the MuleSoft Anypoint Platform. 
+  const introMessage = `Hi, I'm Max, an AI Agent built with MuleChain on the MuleSoft Anypoint Platform. 
     I have been specialized on MuleSoft Documentation and trained to know almost everything from <b>docs.mulesoft.com</b>. 
   `;
   addMessage('bot', formatReply(introMessage));
