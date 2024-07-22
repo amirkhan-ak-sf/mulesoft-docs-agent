@@ -17,10 +17,12 @@ document.getElementById('user-input').addEventListener('keydown', function (even
 
 
 let loadingMessages = [
+  "Understanding the context...",
   "Max is searching the docs...",
   "Found section, now diving deeper to answer your question...",
+  "Gathering information...",
   "Found it, formulating the answer...",
-  "Its just about time..."
+  "Taking longer than expected..."
 ];
 let currentMessageIndex = 0;
 
