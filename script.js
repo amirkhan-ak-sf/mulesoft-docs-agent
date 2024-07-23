@@ -22,6 +22,7 @@ let loadingMessages = [
   "Found section, now diving deeper to answer your question...",
   "Gathering information...",
   "Found it, formulating the answer...",
+  "Working on it...",
   "Taking longer than expected..."
 ];
 let currentMessageIndex = 0;
@@ -43,7 +44,7 @@ async function sendMessage() {
   loadingMessageInterval = setInterval(() => {
     currentMessageIndex = (currentMessageIndex + 1) % loadingMessages.length;
     loadingMessageElement.textContent = loadingMessages[currentMessageIndex];
-  }, 7500);
+  }, 5000);
 
 
   try {
@@ -61,7 +62,26 @@ async function sendMessage() {
 
     //const data = await response.json();
     const generatedText = await response.text();
-    const text = generatedText.replace(/\n/g, '<br>')
+    const parts = generatedText.split('`');
+
+    const pElement = document.createElement('p');
+
+    for (let i = 0; i < parts.length; i++) {
+      if (i % 2 === 0) {
+        // Text outside backticks
+        pElement.appendChild(document.createTextNode(parts[i]));
+      } else {
+        // Text inside backticks
+        const codeElement = document.createElement('code');
+        codeElement.style.backgroundColor = '#ffffff'; // Change the background color here
+        codeElement.style.color = '#008000'; // Change the font color here
+        codeElement.appendChild(document.createTextNode(parts[i]));
+        pElement.appendChild(codeElement);
+      }
+    }
+
+    const text = pElement.outerHTML.replace(/\n/g, '<br>')
+
     //updateIndicators(data.generation.contentQuality.scanToxicity.categories);
     console.log(text);
 
