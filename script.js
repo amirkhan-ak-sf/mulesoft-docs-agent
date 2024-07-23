@@ -77,6 +77,7 @@ async function sendMessage() {
     document.getElementById('user-input').disabled = false;
     document.getElementById('send-btn').disabled = false;
     document.getElementById('user-input').focus();
+    currentMessageIndex = 0;
   }
 }
 
