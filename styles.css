@@ -125,6 +125,7 @@ body {
   margin: 0 10px 20px 10px; /* Margins to avoid touching edges */
 }
 
+
 /* Input field styling */
 #user-input {
   flex-grow: 1; /* Make input take available space */
@@ -316,6 +317,12 @@ body {
   justify-content: space-between;
   height: 100%;
 }
+
+#language-select {
+  width: 150px; /* Change the width to your desired value */
+  margin-left: 10px; /* Add some margin to separate it from the input field */
+}
+
 
 /* Media queries for responsive font sizes */
 @media (max-width: 768px) {
