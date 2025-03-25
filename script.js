@@ -48,7 +48,7 @@ async function sendMessage() {
 
 
   try {
-    const response = await fetch('https://rfp-einstein-b1szvf.5sc6y6-2.usa-e2.cloudhub.io/api/mule/faq', {
+    const response = await fetch('https://rfp-einstein-kkvkik.5sc6y6-1.usa-e2.cloudhub.io/prompt', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
